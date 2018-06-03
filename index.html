@@ -1,0 +1,989 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Alaa Nadhem</title>
+ 
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
+     <link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="js/PicModal.js"></script>
+
+
+    <!-- <link rel="stylesheet" href="styles-VideoModal.css"> -->
+
+
+  <!-- <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic'>
+<link rel='stylesheet prefetch' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/67439/basic.css'>
+<link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic'>
+<link rel='stylesheet prefetch' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/67439/data-buttons.css'>
+
+-->
+  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <style type="text/css" media="screen">  
+<!-- Pictures Modal CSS --> 
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create four equal columns that floats next to eachother */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: inherit;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+
+<!-- Picture modal END -->
+
+
+  .container-fluid {
+    
+     padding-top: 70px;
+     padding-bottom: 70px;
+    
+   }
+  
+   body{
+     
+           background-color:#181818;
+           -webkit-user-select: none; /* Safari */
+           -moz-user-select: none; /* Firefox */
+           -ms-user-select: none; /* IE10+/Edge */
+           user-select: none; /* Standard */
+   }
+  
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    
+  font-family:hack;
+  position: relative;
+        color:white;
+    
+          }
+  
+  p {
+    
+      font-size: 16px;
+            color:#F0F0F0;
+    
+  }
+
+  
+  .fa{
+    
+         color:#F0F0F0;
+  
+  }
+  
+   .text{
+  font-weight: 100;
+  color: #FAFAFA;
+}
+ 
+body,td,th {
+  font-weight: 500;
+}
+    body,td,th {
+  font-weight: 400;
+}
+
+
+  img#Pic1.img-responsive{
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+img#Pic1.img-responsive:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+
+
+}
+
+img.hover-shadow{
+  width:305px;
+}
+
+video{
+  max-width: 640px;
+    height: 480px;
+}
+		
+
+			form{
+			align-content: center;
+	border: 10px solid #FFFFFF;
+	border-radius: 20px;
+	width: 700px;
+	height: 500px;
+	/*position: relative;*/
+	display: block;
+	/*left: 315px;*/
+	margin-bottom: 50px;
+
+			}
+		
+.contact{
+		
+
+	
+		}
+		
+.name-text{
+	font-size: xx-large;
+	position: relative;
+	left: -220px;
+	top: 30px;
+		}
+		
+		
+.blank-name{
+	position: relative;	
+	top: -15px;
+	width: 350px;
+	height: 40px;
+	left: 60px;
+		}	
+		
+		
+.email-text{
+	font-size: xx-large;
+	position: relative;
+	left: -220px;
+	top: 30px;	
+		}
+		
+		
+.blank-email{
+	position: relative;	
+	top: -20px;
+	width: 350px;
+	height: 40px;
+	left: 60px;		
+		}
+		
+
+.message{
+	font-size: xx-large;
+	position: relative;
+	left: -165px;
+	top: 20px;		
+			
+		}
+		
+		
+.textspace{
+	position: relative;	
+	top: 20px;
+	width: 510px;
+	height: 150px;
+	left: 20px;			
+			
+		}	
+		
+		
+.send{
+	position: relative;	
+	top: 55px;
+	width: 90px;
+	height: 40px;
+	left: 20px;	
+	
+		}		
+
+.btn{
+	color:black;
+	background-color: white;
+}
+.btn:hover{
+	color:white;
+	background-color:grey;
+}
+		
+		html{
+			font-family: hack!important;
+		}
+		
+		
+    </style>
+	
+
+	
+</head>
+
+<body>
+
+
+  <script>
+// Open the Modal
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+         
+	
+	
+	
+         <div class="container-fluid bg-1 text-center" style="padding-top:40px;padding-bottom:20px;"> 
+    <h1>Hi</h1>
+       
+             <img src="Images/logo.png" class="img-responsive img-circle margin glitch" id="myPic" style="display:inline; border-radius:50%;">
+   </div>
+         <div class="container-fluid bg-2 text-center" style="padding-top:0px;padding-bottom:0px;">
+             <h1 id="WhoamI" style="">
+         
+                 <div class="container">
+                      <div class="text"></div>
+                 </div>
+           <h1>Alaa Nadhem Haider</h1>
+       </h1>
+   
+            </div>
+<br>
+<br>
+
+            <div class="container-fluid bg-3 text-center" style="padding-top:0px;padding-bottom:0px;">
+
+ <h1 style="padding-bottom: 50px;padding-top: 50px;">Portifolio</h1>
+
+
+
+<!-- Images used to open the lightbox -->
+<div class="row">
+ 
+  <div class="column">
+    <img src="Images/Work/JPG/Showreel.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/C.V.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/11.You-and-I-color.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/_WOLF.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+  </div>
+</div>
+
+<br>
+
+ <div class="row">
+ 
+  <div class="column">
+    <img src="Images/Work/JPG/Final-Improved.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/Brochures.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/12.Room.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow">
+  </div>
+	<div class="column">
+    <img src="Images/Work/JPG/14.poster1.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow">
+  </div>
+</div>  	
+
+
+
+  <br>
+
+ <div class="row">
+ <div class="column">
+    <img src="Images/Work/JPG/_-Mouse-Pad.jpg" onclick="openModal();currentSlide(9)" class="hover-shadow">
+  </div>
+	<div class="column">
+    <img src="Images/Work/JPG/Bike.jpg" onclick="openModal();currentSlide(10)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/14.poster.jpg" onclick="openModal();currentSlide(11)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/Feather-Juxtaposition.jpg" onclick="openModal();currentSlide(12)" class="hover-shadow">
+  </div>
+</div>  
+
+   
+   
+  <br>
+  
+<div class="row">
+ 
+  <div class="column">
+    <img src="Images/Work/JPG/Guitar.jpg" onclick="openModal();currentSlide(13)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/Coloring.jpg" onclick="openModal();currentSlide(14)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/13.icons.jpg" onclick="openModal();currentSlide(15)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/Wolf.jpg" onclick="openModal();currentSlide(16)" class="hover-shadow">
+  </div>
+</div>  
+
+   
+
+<br>
+   
+   
+   
+<div class="row">
+ 
+  <div class="column">
+    <img src="Images/Work/JPG/13.Logowhite.png.jpg" onclick="openModal();currentSlide(17)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/Flyier.jpg" onclick="openModal();currentSlide(18)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/3Droom.jpg" onclick="openModal();currentSlide(19)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/3Droom4.jpg" onclick="openModal();currentSlide(20)" class="hover-shadow">
+  </div>
+</div>  
+ 
+
+   
+
+<br>
+    
+<div class="row">
+  
+  <div class="column">
+    <img src="Images/Work/JPG/3Droom5.jpg" onclick="openModal();currentSlide(21)" class="hover-shadow">
+  </div> 
+  <div class="column">
+    <img src="Images/Work/JPG/3D1.jpg" onclick="openModal();currentSlide(22)" class="hover-shadow">
+  </div>
+   <div class="column">
+    <img src="Images/Work/JPG/3D6.jpg" onclick="openModal();currentSlide(23)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/3D7.jpg" onclick="openModal();currentSlide(24)" class="hover-shadow">
+  </div>
+</div> 
+
+   
+
+<br>
+<div class="row">
+  
+  <div class="column">
+    <img src="Images/Work/JPG/Dice.jpg" onclick="openModal();currentSlide(25)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="Images/Work/JPG/Nadhem's-Rockets.jpg" onclick="openModal();currentSlide(26)" class="hover-shadow">
+  </div> 
+  <div class="column">
+    <img src="Images/Work/JPG/School-Of-Rock.jpg" onclick="openModal();currentSlide(27)" class="hover-shadow">
+  </div>
+   <div class="column">
+    <img src="Images/Work/JPG/A-Thousand-Pieces.jpg" onclick="openModal();currentSlide(28)" class="hover-shadow">
+  </div>
+</div>
+
+<br>
+<br>
+
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 28</div>
+      <video width="auto" controls>
+  <source src="Images/Work/Video/Showreel.mp4" type="video/mp4">
+	</video>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 28</div>
+      <video width="auto" controls>
+  <source src="Images/Work/Video/C.V.mp4" type="video/mp4">
+	</video>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 28</div>
+      <img src="Images/Work/JPG/11.You-and-I-color.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 28</div>
+      <img src="Images/Work/JPG/_WOLF.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">5 / 28</div>
+      <img src="Images/Work/JPG/Final-Improved.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">6 / 28</div>
+      <img src="Images/Work/JPG/Brochures.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">7 / 28</div>
+      <img src="Images/Work/JPG/12.Room.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">8 / 28</div>
+      <img src="Images/Work/JPG/14.poster1.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">9 / 28</div>
+      <img src="Images/Work/JPG/_-Mouse-Pad.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">10 / 28</div>
+      <img src="Images/Work/JPG/Bike.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">11 / 28</div>
+      <img src="Images/Work/JPG/14.poster.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">12 / 28</div>
+      <img src="Images/Work/JPG/Feather-Juxtaposition.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">13 / 28</div>
+      <img src="Images/Work/JPG/Guitar.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">14 / 28</div>
+      <img src="Images/Work/JPG/Coloring.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">15 / 28</div>
+      <img src="Images/Work/JPG/13.icons.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">16 / 28</div>
+      <img src="Images/Work/JPG/Wolf.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">17 / 28</div>
+      <img src="Images/Work/JPG/13.Logowhite.png.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">18 / 28</div>
+      <img src="Images/Work/JPG/Flyier.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">19 / 28</div>
+      <img src="Images/Work/JPG/3Droom.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">20 / 28</div>
+      <img src="Images/Work/JPG/3Droom4.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">21 / 28</div>
+      <img src="Images/Work/JPG/3Droom5.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">22 / 28</div>
+      <img src="Images/Work/JPG/3D1.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">23 / 28</div>
+      <img src="Images/Work/JPG/3D6.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">24 / 28</div>
+      <img src="Images/Work/JPG/3D7.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">25 / 28</div>
+      <img src="Images/Work/JPG/Dice.jpg" style="width:100%">
+    </div>
+    
+    
+    <div class="mySlides">
+      <div class="numbertext">26 / 28</div>
+      <video width="auto" controls>
+  <source src="Images/Work/Video/Nadhem's Rockets.mp4" type="video/mp4">
+	  </video>
+  	</div>
+	  
+	  
+    <div class="mySlides">
+      <div class="numbertext">27 / 28</div>
+      <video width="auto" controls>
+  <source src="Images/Work/Video/School of Rock.mp4" type="video/mp4">
+	  </video>    
+    </div>
+		
+   	
+    <div class="mySlides">
+      <div class="numbertext">28 / 28</div>
+      <video width="auto" controls>
+  <source src="Images/Work/Video/A THOUSAND PIECES.mp4" type="video/mp4">
+	  </video> 
+	</div>
+	  
+		  
+
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail image controls -->
+    <!--<div style="background-color:#181818;">
+<!<div class="row">
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(1)" alt="Nature">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(2)" alt="Trolltunga">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(3)" alt="Mountains">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(4)" alt="Hi">
+    </div>
+</div>
+
+<br>
+
+
+<div class="row">
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(5)" alt="Nature">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(6)" alt="Trolltunga">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(7)" alt="Mountains">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(8)" alt="Hi">
+    </div>
+</div>
+
+<br>
+
+
+<div class="row">
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(9)" alt="Nature">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(10)" alt="Trolltunga">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(11)" alt="Mountains">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(12)" alt="Hi">
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(13)" alt="Nature">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(14)" alt="Trolltunga">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(15)" alt="Mountains">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(16)" alt="Hi">
+    </div>
+</div>
+
+<br>
+
+  
+<div class="row">
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(17)" alt="Nature">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(18)" alt="Trolltunga">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(19)" alt="Mountains">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(20)" alt="Hi">
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(21)" alt="Nature">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(22)" alt="Trolltunga">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(23)" alt="Mountains">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(24)" alt="Hi">
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(25)" alt="Nature">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(26)" alt="Trolltunga">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(27)" alt="Mountains">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="https://placehold.it/150x80?text=IMAGE" onclick="currentSlide(28)" alt="Hi">
+    </div>
+</div>
+
+<br>
+-->
+  
+
+
+
+    </div>          
+	</div>
+	</div>
+	
+		  
+	  
+	  
+
+<br><br>
+
+
+ 
+
+
+  <div class="container-fluid bg-3 text-center" id="Social"  style="padding-top:20px;">
+ 
+	  
+	  
+	  <h1>Contact me</h1><br>
+	 
+  		
+                  
+ 
+              	<div class="contact" align="center">
+              
+           <form style="text-align: center;">
+
+      
+				<h4 class="name-text">Name</h4> <input class="blank-name" type="text">
+				<h4 class="email-text">Email</h4><input class="blank-email" type="email">
+
+				<p class="message">Send a message </p>
+				<textarea class="textspace"></textarea>
+
+    
+   
+   				<input class="send btn" type="submit">
+
+			</form>
+		
+	</div>
+  </div>
+  
+</body>
+</html>
